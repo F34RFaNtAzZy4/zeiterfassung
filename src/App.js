@@ -1,26 +1,69 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Controls from './components/Controls.js';
+import SiteHeader from './components/SiteHeader.js';
+import Widget from './components/Widget.js';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import FormRow from '@material-ui/core/Grid';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const state = {
+		 
+	};
+	export default function App() {
+	  return (
+		<div
+		>
+			<CssBaseline/>
+			<Container
+			 disableGutters={true}
+			>
+				<SiteHeader/>
+				
+				<Grid 
+				container
+				spacing = {2}
+				direction ="row" 
+				justify="center" 
+				alignContent="center"
+				>
+					<Grid
+					item
+					sm = {6}
+					>
+						<Grid 
+						container
+						spacing = {2}
+						direction ="column" 
+						justify="center" 
+						alignContent="center"
+						>
+							<Grid
+							item
+							sm = {6}
+							>
+								<Widget/>
+								<Widget/>
+							</Grid>
+						</Grid>
+					</Grid>
+					<Grid
+					item
+					sm = {6}
+					>
+						<Grid
+						container
+						spacing = {2}
+						direction ="row" 
+						justify="center" 
+						alignContent="center"
+						>
+							<h2>Excel List</h2>
+						</Grid>
+					</Grid>
+				</Grid>
+	   	 	</Container>
+		</div>
+	  );
 }
-
-export default App;
